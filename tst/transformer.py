@@ -122,6 +122,7 @@ class Transformer(nn.Module):
         if self._generate_PE is not None:
             positional_encoding = self._generate_PE(K, self._d_model)
             positional_encoding = positional_encoding.to(encoding.device)
+            print(positional_encoding.size)
             encoding.add_(positional_encoding)
 
         # Encoding stack
